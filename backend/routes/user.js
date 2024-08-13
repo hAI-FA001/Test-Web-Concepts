@@ -4,12 +4,12 @@ const User = require('../models/user')
 const router = express.Router();
 
 function commonReqResStuff(req, res) {
-    console.log(req.session.user);
-    console.log("Cookie is ", req.cookies, req.session.cookie);
-    console.log("SID is ", req.sessionID, req.session.id);
+    // console.log(req.session.user);
+    // console.log("Cookie is ", req.cookies, req.session.cookie);
+    // console.log("SID is ", req.sessionID, req.session.id);
     
-    res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Cache-Control', 'public');
+    // res.setHeader('Content-Type', 'application/json');
+    // res.setHeader('Cache-Control', 'public');
 }
 
 

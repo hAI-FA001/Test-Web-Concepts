@@ -22,6 +22,7 @@ app.use(expressSession({
         secure: process.env.ENV == "production",
         sameSite: 'none',
     },
+    rolling: true,
 }))
 app.use(cors({ origin: ['https://test-web-concepts.vercel.app'], methods: ['POST'], credentials: true,}))
 
