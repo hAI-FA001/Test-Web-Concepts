@@ -31,8 +31,10 @@ Documenting the process of how I made things work, and playing with settings of 
     d) In React:
         fetch(<url>,
             {
-                credentials: "include" (must do this, frontend will send cookie, linked with CORS config in Express),
-                method: <e.g. "GET">,
+                credentials: "include" (must do this to make frontend send cookie, linked with CORS config in Express),
+                method: <e.g. "POST">,
+                body: <e.g. JSON.stringify({ username: username, password: password })>,
+                headers: { "Content-Type": "application/json; charset=UTF-8" } (so the server can use the data correctly),
             }
         )
 
