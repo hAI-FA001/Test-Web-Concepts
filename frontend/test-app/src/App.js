@@ -35,7 +35,7 @@ const App = () => {
     }
 
     function onSendSessionDataRequest(event) {
-        fetch(process.env.REACT_APP_SERVER_BASE_URL + "/user/session",
+        fetch(process.env.REACT_APP_SERVER_BASE_URL + "/session",
             {
                 credentials: "include",
                 method: "GET",
