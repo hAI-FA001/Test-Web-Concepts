@@ -25,7 +25,7 @@ app.use(expressSession({
         sameSite: 'lax',
         domain: process.env.COOKIE_DOMAIN,
     },
-    rolling: true,
+    rolling: false,
 }))
 app.use(cors({ origin: ['https://test-web-concepts.vercel.app'], methods: ['POST']}))
 
