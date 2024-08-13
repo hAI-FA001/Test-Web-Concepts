@@ -19,7 +19,6 @@ app.use(expressSession({
     secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true,
-    genid: (req) => "my-id",
     cookie: {
         maxAge: 1000 * 60 * 60,
         httpOnly: true,
@@ -27,7 +26,7 @@ app.use(expressSession({
         sameSite: 'none',
         domain: process.env.COOKIE_DOMAIN,
     },
-    rolling: false,
+    rolling: true,
 }))
 app.use(cors({ origin: ['https://test-web-concepts.vercel.app'], methods: ['POST'], credentials: true,}))
 
