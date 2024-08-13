@@ -23,7 +23,6 @@ app.use(expressSession({
         httpOnly: true,
         secure: process.env.ENV == "production",
         sameSite: 'none',
-        partitioned: true,
     },
 }))
 app.use(cors({ origin: ['https://test-web-concepts.vercel.app'], methods: ['POST'], credentials: true,}))
