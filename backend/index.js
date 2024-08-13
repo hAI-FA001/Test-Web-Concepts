@@ -10,9 +10,11 @@ const cors = require('cors');
 
 dotenv.config();
 
+app.set('trust proxy', 1);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(expressSession({
     name: "THECOOKIE",
     secret: process.env.SESSION_SECRET,
@@ -22,7 +24,7 @@ app.use(expressSession({
         maxAge: 1000 * 60 * 60,
         httpOnly: true,
         secure: process.env.ENV == "production",
-        sameSite: 'lax',
+        sameSite: 'none',
         domain: process.env.COOKIE_DOMAIN,
     },
     rolling: false,
