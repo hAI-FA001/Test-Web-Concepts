@@ -8,12 +8,7 @@ function commonReqResStuff(req, res) {
     console.log("Cookie is ", req.cookies, req.session.cookie);
     console.log("SID is ", req.sessionID, req.session.id);
     
-    // res.cookie('THECOOK', `s:${req.sessionID}`, req.session.cookie);
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, authorization')
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Access-Control-Allow-Origin','https://test-web-concepts.vercel.app');
-    res.setHeader('Access-Control-Allow-METHODS', "GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH");
     res.setHeader('Cache-Control', 'public');
 }
 
