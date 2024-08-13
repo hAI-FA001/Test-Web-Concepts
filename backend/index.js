@@ -24,7 +24,7 @@ app.use(expressSession({
         httpOnly: true,
         secure: process.env.ENV == "production",
         sameSite: 'none',
-        // domain: process.env.COOKIE_DOMAIN,
+        domain: process.env.COOKIE_DOMAIN,
     },
     rolling: true,
 }))
