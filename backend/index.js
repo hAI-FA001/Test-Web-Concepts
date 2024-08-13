@@ -14,7 +14,6 @@ app.set('trust proxy', 1);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(expressSession({
     name: "THECOOKIE",
     secret: process.env.SESSION_SECRET,
