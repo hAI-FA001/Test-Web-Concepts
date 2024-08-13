@@ -45,14 +45,13 @@ body {
 
   width: 100%;
 
-  padding: 0 20%;
   margin-bottom: 1em;
 }
 
 button {
   padding: 1em 1em;
 
-  height: 4em;
+  height: 5em;
   width: 8em;
 
   background-color: bisque;
