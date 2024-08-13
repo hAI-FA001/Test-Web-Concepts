@@ -19,4 +19,8 @@ router.post('/logout', (req, res) => {
     res.status(200).json("Logged Out").send();
 });
 
+router.get('/session', (req, res) => {
+    res.status(200).send("Session is: " + JSON.stringify(req.session));
+})
+
 module.exports = router;
