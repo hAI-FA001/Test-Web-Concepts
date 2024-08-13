@@ -27,7 +27,7 @@ app.use(expressSession({
     },
     rolling: false,
 }))
-app.use(cors({ origin: ['https://test-web-concepts.vercel.app'], methods: ['POST']}))
+app.use(cors({ origin: ['https://test-web-concepts.vercel.app'], methods: ['POST'], credentials: true,}))
 
 app.use('/user/', require('./routes/user'));
 app.get('/', (req, res) => {
