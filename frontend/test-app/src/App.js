@@ -8,20 +8,22 @@ const App = () => {
     function onSendLoginRequest(event) {
         fetch(process.env.REACT_APP_SERVER_BASE_URL + "/user/login",
             {
+                credentials: 'include',
                 method: "POST",
                 body: JSON.stringify({ username: username, password: password }),
                 headers: { "Content-Type": "application/json; charset=UTF-8" },
             }
         )
-            .then((res) => res.json())
-            .then((data) => {
-                setApiResponse(data);
-            });
-        }
-        
-        function onSendLogoutRequest(event) {
-            fetch(process.env.REACT_APP_SERVER_BASE_URL + "/user/logout",
+        .then((res) => res.json())
+        .then((data) => {
+            setApiResponse(data);
+        });
+    }
+    
+    function onSendLogoutRequest(event) {
+        fetch(process.env.REACT_APP_SERVER_BASE_URL + "/user/logout",
             {
+                credentials: 'include',
                 method: "POST",
                 headers: { "Content-Type": "application/json; charset=UTF-8" }
             }
