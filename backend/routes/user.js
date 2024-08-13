@@ -16,13 +16,13 @@ function commonReqResStuff(req, res) {
 router.post('/login', (req, res) => {
     req.session.user = new User(req.body.username ?? "default name", req.body.password ?? "default pass");
     commonReqResStuff(req, res);
-    res.status(200).json("Logged In + Session " + req.session + " + ID " + req.session.id + " + Cookie " + req.session.cookie).send();
+    res.status(200).json("Logged In, User "+ JSON.stringify(req.session.user) +", Session " + JSON.stringify(req.session) + ", ID " + req.session.id + ", Cookie " + JSON.stringify(req.session.cookie)).send();
 });
 
 router.post('/logout', (req, res) => {
     req.session.user = null;
     commonReqResStuff(req, res);
-    res.status(200).json("Logged Out + Session " + req.session + " + ID " + req.session.id + " + Cookie " + req.session.cookie).send();
+    res.status(200).json("Logged Out, User "+ JSON.stringify(req.session.user) +", Session " + JSON.stringify(req.session) + ", ID " + req.session.id + ", Cookie " + JSON.stringify(req.session.cookie)).send();
 });
 
 router.get('/session', (req, res) => {
