@@ -9,6 +9,8 @@ const cors = require('cors');
 
 dotenv.config();
 
+app.set('trust proxy', 1);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(expressSession({
@@ -22,6 +24,7 @@ app.use(expressSession({
         secure: process.env.ENV == "production",
         sameSite: 'none',
     },
+    rolling: true,
 }))
 app.use(cors({ origin: ['https://test-web-concepts.vercel.app'], methods: ['POST'], credentials: true,}))
 
