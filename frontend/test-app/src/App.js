@@ -8,7 +8,7 @@ const App = () => {
     function onSendLoginRequest(event) {
         fetch(process.env.REACT_APP_SERVER_BASE_URL + "/user/login",
             {
-                credentials: 'include',
+                credentials: "include",
                 method: "POST",
                 body: JSON.stringify({ username: username, password: password }),
                 headers: { "Content-Type": "application/json; charset=UTF-8" },
@@ -23,7 +23,7 @@ const App = () => {
     function onSendLogoutRequest(event) {
         fetch(process.env.REACT_APP_SERVER_BASE_URL + "/user/logout",
             {
-                credentials: 'include',
+                credentials: "include",
                 method: "POST",
                 headers: { "Content-Type": "application/json; charset=UTF-8" }
             }

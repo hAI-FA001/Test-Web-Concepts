@@ -19,6 +19,7 @@ app.use(expressSession({
     secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: true,
+    genid: (req) => "my-id",
     cookie: {
         maxAge: 1000 * 60 * 60,
         httpOnly: true,
