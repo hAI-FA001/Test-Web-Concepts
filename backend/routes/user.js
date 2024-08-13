@@ -20,6 +20,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.get('/session', (req, res) => {
+    console.log(req.session.user);
     res.status(200).send("Session is: " + JSON.stringify(req.session));
 })
 
