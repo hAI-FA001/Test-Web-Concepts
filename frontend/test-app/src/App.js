@@ -34,6 +34,20 @@ const App = () => {
             });
     }
 
+    function onSendSessionDataRequest(event) {
+        fetch(process.env.REACT_APP_SERVER_BASE_URL + "/user/session",
+            {
+                credentials: "include",
+                method: "GET",
+                headers: { "Content-Type": "application/json; charset=UTF-8" }
+            }
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                setApiResponse(data);
+            });
+    }
+
     return (
         <div className="main-container">
             <h1>Send a Request to Server</h1>
@@ -43,6 +57,7 @@ const App = () => {
                 <div className="btns-container">
                     <button onClick={onSendLoginRequest}>Login Request</button>
                     <button onClick={onSendLogoutRequest}>Logout Request</button>
+                    <button onClick={onSendSessionDataRequest}>Get Session Data</button>
                 </div>
                 <div><p>{apiResponse? apiResponse : "Response will appear here"}</p></div>
             </div>
