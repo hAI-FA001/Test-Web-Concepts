@@ -27,7 +27,7 @@ router.post('/logout', (req, res) => {
 
 router.get('/session', (req, res) => {
     commonReqResStuff(req, res);
-    res.status(200).send("Session is: " + JSON.stringify(req.session) + " + Session " + req.session + " + ID " + req.session.id + " + Cookie " + req.session.cookie).send();
+    res.status(200).json("Session is: " + JSON.stringify(req.session) + ", Session " + req.session + ", ID " + req.session.id + ", Cookie " + req.session.cookie).send();
 })
 
 module.exports = router;
