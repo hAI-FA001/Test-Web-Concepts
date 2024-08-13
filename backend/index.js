@@ -4,13 +4,10 @@ app = express();
 
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
 const expressSession = require('express-session')
 const cors = require('cors');
 
 dotenv.config();
-
-app.set('trust proxy', 1);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
